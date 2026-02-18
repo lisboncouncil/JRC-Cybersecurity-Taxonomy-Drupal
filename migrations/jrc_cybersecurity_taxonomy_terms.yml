@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - jrc_cybersecurity_taxonomy
+  module:
+    - taxonomy
+id: jrc_cybersecurity_taxonomy_terms
+label: 'JRC Cybersecurity Taxonomy Terms'
+migration_group: jrc_cybersecurity
+source:
+  plugin: jrc_cybersecurity_csv
+  path: "%migrate_source_path%/cybersecurity_taxonomy_entities.csv"
+  ids:
+    - uri
+process:
+  vid:
+    plugin: default_value
+    default_value: jrc_cybersecurity_taxonomy
+  name:
+    - plugin: get
+      source: pref_label
+  weight:
+    - plugin: default_value
+      default_value: 0
+  field_jrc_uri:
+    - plugin: get
+      source: uri
+  field_jrc_notation:
+    - plugin: get
+      source: notation
+  field_jrc_description:
+    - plugin: get
+      source: description
+  field_jrc_alt_labels:
+    - plugin: get
+      source: alt_labels
+    - plugin: explode
+      delimiter: ';'
+    - plugin: callback
+      callable: trim
+  field_jrc_in_schemes:
+    - plugin: get
+      source: in_schemes
+    - plugin: explode
+      delimiter: ';'
+    - plugin: callback
+      callable: trim
+  field_jrc_broader:
+    - plugin: get
+      source: broader
+    - plugin: explode
+      delimiter: ';'
+    - plugin: callback
+      callable: trim
+    - plugin: jrc_uri_lookup
+  field_jrc_narrower:
+    - plugin: get
+      source: narrower
+    - plugin: explode
+      delimiter: ';'
+    - plugin: callback
+      callable: trim
+    - plugin: jrc_uri_lookup
+  field_jrc_category_type:
+    - plugin: get
+      source: in_schemes
+    - plugin: explode
+      delimiter: ';'
+    - plugin: callback
+      callable: trim
+    - plugin: jrc_category_from_schemes
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: jrc_cybersecurity_taxonomy
+migration_dependencies:
+  required:
+    - jrc_cybersecurity_taxonomy_vocabularies
+    - jrc_cybersecurity_taxonomy_fields
+  optional: {  }

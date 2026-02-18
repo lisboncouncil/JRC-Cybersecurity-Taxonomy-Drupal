@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - jrc_cybersecurity_taxonomy
+  config:
+    - field.storage.taxonomy_term.field_jrc_uri
+    - taxonomy.vocabulary.jrc_cybersecurity_taxonomy
+id: taxonomy_term.jrc_cybersecurity_taxonomy.field_jrc_uri
+field_name: field_jrc_uri
+entity_type: taxonomy_term
+bundle: jrc_cybersecurity_taxonomy
+label: URI
+description: 'URI of the cybersecurity concept'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

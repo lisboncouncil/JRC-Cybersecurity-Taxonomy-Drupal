@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - jrc_cybersecurity_taxonomy
+  config:
+    - field.storage.taxonomy_term.field_jrc_in_schemes
+    - taxonomy.vocabulary.jrc_cybersecurity_taxonomy
+id: taxonomy_term.jrc_cybersecurity_taxonomy.field_jrc_in_schemes
+field_name: field_jrc_in_schemes
+entity_type: taxonomy_term
+bundle: jrc_cybersecurity_taxonomy
+label: 'In Schemes'
+description: 'Schemes this concept belongs to'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

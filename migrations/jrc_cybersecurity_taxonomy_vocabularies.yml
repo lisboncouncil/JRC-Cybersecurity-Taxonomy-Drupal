@@ -1,0 +1,58 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - jrc_cybersecurity_taxonomy
+id: jrc_cybersecurity_taxonomy_vocabularies
+label: 'JRC Cybersecurity Taxonomy Vocabularies'
+migration_group: jrc_cybersecurity
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      vid: jrc_cybersecurity_category
+      name: 'Knowledge Domain'
+      description: 'Knowledge Domain category - 165 terms'
+      weight: 0
+    -
+      vid: jrc_cybersecurity_category
+      name: 'Sector'
+      description: 'Sector category - 15 terms'
+      weight: 1
+    -
+      vid: jrc_cybersecurity_category
+      name: 'Technology'
+      description: 'Technology category - 17 terms'
+      weight: 2
+    -
+      vid: jrc_cybersecurity_category
+      name: 'Use Case'
+      description: 'Use Case category - 6 terms'
+      weight: 3
+  ids:
+    vid:
+      type: string
+    name:
+      type: string
+process:
+  vid:
+    plugin: get
+    source: vid
+  name:
+    plugin: get
+    source: name
+  description__value:
+    plugin: get
+    source: description
+  description__format:
+    plugin: default_value
+    default_value: plain_text
+  weight:
+    plugin: get
+    source: weight
+destination:
+  plugin: entity:taxonomy_term
+migration_dependencies:
+  required: {  }
+  optional: {  }

@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'JRC Cybersecurity Category'
+vid: jrc_cybersecurity_category
+description: 'Categories for organizing JRC Cybersecurity Taxonomy terms: Knowledge Domain, Sector, Technology, Use Case'
+weight: 0

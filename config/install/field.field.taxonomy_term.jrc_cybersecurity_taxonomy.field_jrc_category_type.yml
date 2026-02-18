@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - jrc_cybersecurity_taxonomy
+  config:
+    - field.storage.taxonomy_term.field_jrc_category_type
+    - taxonomy.vocabulary.jrc_cybersecurity_category
+    - taxonomy.vocabulary.jrc_cybersecurity_taxonomy
+id: taxonomy_term.jrc_cybersecurity_taxonomy.field_jrc_category_type
+field_name: field_jrc_category_type
+entity_type: taxonomy_term
+bundle: jrc_cybersecurity_taxonomy
+label: 'Category Type'
+description: 'Category type: Knowledge Domain, Sector, Technology, or Use Case'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      jrc_cybersecurity_category: jrc_cybersecurity_category
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

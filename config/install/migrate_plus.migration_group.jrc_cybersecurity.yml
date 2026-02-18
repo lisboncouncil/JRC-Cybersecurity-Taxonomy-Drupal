@@ -1,0 +1,13 @@
+uuid: UUID_UNICO
+langcode: en
+status: true
+dependencies: {  }
+id: jrc_cybersecurity
+label: 'JRC Cybersecurity'
+description: 'Migration group for JRC Cybersecurity Taxonomy data'
+shared_configuration:
+  source:
+    key: default
+    plugin: csv
+  destination:
+    plugin: entity:taxonomy_term

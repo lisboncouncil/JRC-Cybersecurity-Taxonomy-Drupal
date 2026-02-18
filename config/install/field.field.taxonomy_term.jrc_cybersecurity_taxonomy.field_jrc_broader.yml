@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - jrc_cybersecurity_taxonomy
+  config:
+    - field.storage.taxonomy_term.field_jrc_broader
+    - taxonomy.vocabulary.jrc_cybersecurity_taxonomy
+id: taxonomy_term.jrc_cybersecurity_taxonomy.field_jrc_broader
+field_name: field_jrc_broader
+entity_type: taxonomy_term
+bundle: jrc_cybersecurity_taxonomy
+label: Broader
+description: 'Broader (parent) concepts'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      jrc_cybersecurity_taxonomy: jrc_cybersecurity_taxonomy
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

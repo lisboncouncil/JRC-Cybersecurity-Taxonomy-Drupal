@@ -1,0 +1,13 @@
+name: 'JRC Cybersecurity Taxonomy'
+type: module
+description: 'JRC Cybersecurity Taxonomy module - Imports and manages cybersecurity taxonomy terms organized by Knowledge Domains, Sectors, Technologies, and Use Cases.'
+core_version_requirement: ^10 || ^11
+package: 'JRC'
+dependencies:
+  - drupal:taxonomy
+  - drupal:migrate
+  - drupal:migrate_plus
+  - drupal:views
+  - drupal:text
+  - drupal:link
+  - drupal:options
