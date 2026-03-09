@@ -1,0 +1,10 @@
+{
+    "name": "lisboncouncil/jrc-cybersecurity-taxonomy-drupal",
+    "description": "JRC Cybersecurity Taxonomy module - Imports and manages cybersecurity taxonomy terms organized by Knowledge Domains, Sectors, Technologies, and Use Cases.",
+    "type": "drupal-custom-module",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^10 || ^11",
+        "drupal/migrate_plus": "^6"
+    }
+}
